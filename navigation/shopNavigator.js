@@ -13,7 +13,9 @@ import MyProfileScreen from '../screens/user/MyProfileScreen';
 import ProductsOverviewScreen from '../screens/shop/ProductsOverviewScreen';
 import ProductListScreen from '../screens/shop/ProductsListScreen';
 import colors from '../constants/colors';
-import { Platform } from 'react-native';
+import { Platform,Button,Image,View } from 'react-native';
+import HeaderButton from '../components/UI/HeaderButton';
+import { HeaderButtons, Item } from 'react-navigation-header-buttons'
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -31,15 +33,45 @@ const ShopNavigator = () => {
     //     )
     // }
 
-    const createHomeStack = () => {
+    const LogoTitle = () => {
+        return (
+        <View style={{marginRight:100}}>
+          <Image
+            style={{ width: 25, height: 25 }}
+            source={require('../assets/favicon.png')}
+            // source={{
+            //     uri: 'https://reactnative.dev/img/tiny_logo.png',
+            //   }}
+          />
+          </View>
+        );
+      }
+
+    const createHomeStack = ({navigation}) => {
         return (
             <Stack.Navigator>
-                <Stack.Screen name='Product Overview' component={ProductsOverviewScreen} />
+                <Stack.Screen name='Product Overview' component={ProductsOverviewScreen}
+                    options={{
+                        headerTitle: props => <LogoTitle {...props} />,
+                        headerLeft:()=>(
+                            <HeaderButtons HeaderButtonComponent={HeaderButton}>
+                            <Item title='Menu' 
+                            iconName={Platform.OS === 'android' ? 'md-menu' : 'ios-menu'}
+                            onPress={()=>{navigation.toggleDrawer()}}/>
+                            </HeaderButtons>
+                        ),
+                        headerRight:()=>(
+                            <HeaderButtons HeaderButtonComponent={HeaderButton}>
+                            <Item title='Cart' iconName={Platform.OS === 'android' ? 'md-cart' : 'ios-cart'}/>
+                            </HeaderButtons>
+                        )
+                    }} 
+                   />
                 <Stack.Screen name='Details' component={ProductListScreen} />
             </Stack.Navigator>
         )
     }
-    
+
     return (
         <NavigationContainer>
             <Drawer.Navigator>
