@@ -13,7 +13,7 @@ import MyProfileScreen from '../screens/user/MyProfileScreen';
 import ProductsOverviewScreen from '../screens/shop/ProductsOverviewScreen';
 import ProductListScreen from '../screens/shop/ProductsListScreen';
 import colors from '../constants/colors';
-import { Platform,Button,Image,View } from 'react-native';
+import { Platform, Button, Image, View } from 'react-native';
 import HeaderButton from '../components/UI/HeaderButton';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons'
 
@@ -35,38 +35,46 @@ const ShopNavigator = () => {
 
     const LogoTitle = () => {
         return (
-        <View style={{marginRight:100}}>
-          <Image
-            style={{ width: 25, height: 25 }}
-            source={require('../assets/favicon.png')}
-            // source={{
-            //     uri: 'https://reactnative.dev/img/tiny_logo.png',
-            //   }}
-          />
-          </View>
+            <View style={{}}>
+                <Image
+                    style={{ width: 20, height: 20 }}
+                    //style={{ width: '80%', height: '80%',resizeMode:'contain'}}
+                    source={require('../assets/app-images/basket.png')}
+                // source={{
+                //     uri: 'https://reactnative.dev/img/tiny_logo.png',
+                //   }}
+                />
+            </View>
         );
-      }
+    }
 
-    const createHomeStack = ({navigation}) => {
+    const createHomeStack = ({ navigation }) => {
         return (
             <Stack.Navigator>
                 <Stack.Screen name='Product Overview' component={ProductsOverviewScreen}
                     options={{
                         headerTitle: props => <LogoTitle {...props} />,
-                        headerLeft:()=>(
+                        headerLeft: () => (
                             <HeaderButtons HeaderButtonComponent={HeaderButton}>
-                            <Item title='Menu' 
-                            iconName={Platform.OS === 'android' ? 'md-menu' : 'ios-menu'}
-                            onPress={()=>{navigation.toggleDrawer()}}/>
+                                <Item title='Menu'
+                                    iconName={Platform.OS === 'android' ? 'md-menu' : 'ios-menu'}
+                                    onPress={() => { navigation.toggleDrawer() }} />
                             </HeaderButtons>
                         ),
-                        headerRight:()=>(
+                        headerRight: () => (
                             <HeaderButtons HeaderButtonComponent={HeaderButton}>
-                            <Item title='Cart' iconName={Platform.OS === 'android' ? 'md-cart' : 'ios-cart'}/>
+                                <Image
+                                    style={{ width: 25, height: 25 ,resizeMode:'contain'}}
+                                    //style={{ width: '80%', height: '80%',}}
+                                    //style={{ width: '100%', height: '100%'}}
+                                    source={require('../assets/app-images/basket.png')}
+
+                                />
+                                {/* <Item title='Cart' iconName={Platform.OS === 'android' ? 'md-cart' : 'ios-cart'}/> */}
                             </HeaderButtons>
                         )
-                    }} 
-                   />
+                    }}
+                />
                 <Stack.Screen name='Details' component={ProductListScreen} />
             </Stack.Navigator>
         )
