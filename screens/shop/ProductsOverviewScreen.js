@@ -16,10 +16,10 @@ const ProductOverviewScreen = ({ navigation }, props) => {
     }, [])
 
     const categoryList = [
-        { id: 1,name: 'SeaFood', image: '../../assets/app-images/seafood.png', backgroundColor: 'red' },
-        { id: 2,name: 'BackWater', image: '../../assets/app-images/backwater.png', backgroundColor: 'blue' },
-        { id: 3,name: 'Dried/Pickle', image: '../../assets/app-images/dried.png', backgroundColor: 'green' },
-        { id: 4,name: 'Fish Combo', image: '../../assets/app-images/combo.png', backgroundColor: 'yellow' }
+        { id: 1,name: 'SeaFood', image: '../../assets/app-images/seafood.png', backgroundColor: '#428edb' },
+        { id: 2,name: 'BackWater', image: '../../assets/app-images/backwater.png', backgroundColor: '#7a8151' },
+        { id: 3,name: 'Dried/Pickle', image: '../../assets/app-images/dried.png', backgroundColor: '#c28551' },
+        { id: 4,name: 'Fish Combo', image: '../../assets/app-images/combo.png', backgroundColor: '#003d63' }
     ]
 
     const demandList = [
@@ -37,8 +37,8 @@ const ProductOverviewScreen = ({ navigation }, props) => {
     }
     //console.log('loader : ', loader);
     return (
-        <ScrollView showsHorizontalScrollIndicator={false} style={{height:2000}}>
-            <View style={styles.categoryWrapper}>
+        <ScrollView showsHorizontalScrollIndicator={false} >
+            <View style={styles.categoryWrapper} cssc>
                 {categoryList.map((catItem) => (<CategoryCard key={catItem.id} catItem={catItem} />))}
             </View>
             <SliderImage />
@@ -93,8 +93,7 @@ const ProductOverviewScreen = ({ navigation }, props) => {
 
 const styles = StyleSheet.create({
     categoryWrapper: {
-        height: 140,
-        paddingTop: 0,
+        paddingTop:30, paddingBottom:20, backgroundColor:'#fff',
         //borderWidth: 2,
         alignItems: "center",
         flexDirection: "row",

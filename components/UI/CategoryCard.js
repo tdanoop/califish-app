@@ -24,19 +24,19 @@ const styles = StyleSheet.create({
         borderColor: 'rgba(0,0,0,0.2)',
         alignItems: 'center',
         justifyContent: 'center',
-        width: 65,
-        height: 65,
-        backgroundColor: '#fff',
-        borderRadius: 35,
-        backgroundColor: 'red'
+        width: 55,
+        height: 55,
+        borderRadius: '100%',
+        backgroundColor: 'red', margin:'auto'
     },
     image: {
-        width: '80%',
-        height: '80%',
+        width: '60%',
+        height: '60%',
         resizeMode: 'contain'
     },
     categoryName: {
         //borderWidth:2
+        marginTop:10, fontSize:12,color:'#000a11', textAlign:'center'
     },
 
 });
