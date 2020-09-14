@@ -4,10 +4,10 @@ import { SliderBox } from "react-native-image-slider-box";
 
 
 const images = [
-    "https://source.unsplash.com/1024x768/?nature",
-    "https://source.unsplash.com/1024x768/?water",
-    "https://source.unsplash.com/1024x768/?girl",
-    "https://source.unsplash.com/1024x768/?tree",
+    "../../assets/app-images/slider-image-1.jpg",
+    "../../assets/app-images/slider-image-1.jpg",
+    "../../assets/app-images/slider-image-1.jpg",
+    "../../assets/app-images/slider-image-1.jpg",
     require('../../assets/favicon.png'),
 ]
 const SliderImage = props => {
@@ -16,9 +16,9 @@ const SliderImage = props => {
         <View style={styles.container}>
             <SliderBox
                circleLoop = {false}
-                sliderBoxHeight={240}
+                sliderBoxHeight={180}
                 dotColor="#FFEE58"
-                inactiveDotColor="#90A4AE"
+                inactiveDotColor="#536f87"
                 images={images}
                 onCurrentImagePressed={index =>
                     console.warn(`image ${index} pressed`)

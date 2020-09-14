@@ -12,7 +12,7 @@ const CategoryCard = props => {
                     source={require(`../../assets/app-images/seafood.png`)}
                 />
             </TouchableOpacity>
-    <Text style={styles.categoryName}>{props.catItem.name}</Text>
+    <Text style={styles.title}>{props.catItem.name}</Text>
         </View>
     )
 
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         width: 55,
         height: 55,
-        borderRadius: '100%',
+        borderRadius: 30,
         backgroundColor: 'red', margin:'auto'
     },
     image: {
@@ -34,9 +34,9 @@ const styles = StyleSheet.create({
         height: '60%',
         resizeMode: 'contain'
     },
-    categoryName: {
+    title: {
         //borderWidth:2
-        marginTop:10, fontSize:12,color:'#000a11', textAlign:'center'
+        marginTop:10, fontSize:12,color:'#000a11', textAlign:'center' , backgroundColor: '#fff',
     },
 
 });

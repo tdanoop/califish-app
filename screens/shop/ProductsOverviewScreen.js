@@ -43,7 +43,7 @@ const ProductOverviewScreen = ({ navigation }, props) => {
             </View>
             <SliderImage />
             <View style={styles.demandWrapper}>
-                <Text style={styles.category}>Fish on Demand</Text>
+                <Text style={styles.title}>Fish on Demand</Text>
 
                 <ScrollView
                     contentContainerStyle={{
@@ -106,6 +106,7 @@ const styles = StyleSheet.create({
         //alignItems: "center",
         //flexDirection: "row",
         //justifyContent: 'space-around'
+        paddingLeft:10, paddingRight:10,backgroundColor: '#fff',
     },
     freshWrapper: {
         justifyContent: 'center',
@@ -113,13 +114,16 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flex: 1
     },
-    category: {
-        //borderWidth:2
+    title: {
+        fontSize:14,color:'#000a11', fontWeight:'bold', paddingLeft:5,  paddingTop:20,paddingBottom:10, backgroundColor: '#fff',
     },
     screen: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    tetet:{
+        backgroundColor:'green'
     }
 });
 
