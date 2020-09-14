@@ -11,15 +11,15 @@ const ProductOverviewScreen = ({ navigation }, props) => {
     const loader = useSelector(state => state.productsReducer.loading);
 
     const dispatch = useDispatch();
-    useEffect(() => {
-        //dispatch(productAction.getProducts());
-    }, [])
+    // useEffect(() => {
+    //     //dispatch(productAction.getProducts());
+    // }, [])
 
     const categoryList = [
-        { id: 1,name: 'SeaFood', image: '../../assets/app-images/seafood.png', backgroundColor: '#428edb' },
-        { id: 2,name: 'BackWater', image: '../../assets/app-images/backwater.png', backgroundColor: '#7a8151' },
-        { id: 3,name: 'Dried/Pickle', image: '../../assets/app-images/dried.png', backgroundColor: '#c28551' },
-        { id: 4,name: 'Fish Combo', image: '../../assets/app-images/combo.png', backgroundColor: '#003d63' }
+        { id: 1,name: 'SeaFood', image: '../../assets/app-images/seafood.png', background: '#428edb' },
+        { id: 2,name: 'BackWater', image: '../../assets/app-images/backwater.png', background: '#7a8151' },
+        { id: 3,name: 'Dried/Pickle', image: '../../assets/app-images/dried.png', background: '#c28551' },
+        { id: 4,name: 'Fish Combo', image: '../../assets/app-images/combo.png', background: '#003d63' }
     ]
 
     const demandList = [
@@ -39,7 +39,7 @@ const ProductOverviewScreen = ({ navigation }, props) => {
     return (
         <ScrollView showsHorizontalScrollIndicator={false} >
             <View style={styles.categoryWrapper} cssc>
-                {categoryList.map((catItem) => (<CategoryCard key={catItem.id} catItem={catItem} />))}
+                {categoryList.map((catItem) => (<CategoryCard key={catItem.id} catItem={catItem} style={{backgroundColor:catItem.background}}/>))}
             </View>
             <SliderImage />
             <View style={styles.demandWrapper}>
@@ -61,7 +61,7 @@ const ProductOverviewScreen = ({ navigation }, props) => {
                 </ScrollView>
             </View>
             <View >
-                <FlatList
+                {/* <FlatList
                   
                     //key={demandList ? 1 : 0}
                     keyExtractor={(item, index) => item.id}
@@ -76,7 +76,7 @@ const ProductOverviewScreen = ({ navigation }, props) => {
                         //width: 1000,
                         //justifyContent: 'space-around'
                          }}
-                />
+                /> */}
             </View>
 
 
