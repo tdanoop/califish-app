@@ -1,15 +1,16 @@
 import React from 'react';
 import { TouchableOpacity, Image, View, Text, StyleSheet } from 'react-native';
+import AppImages from '../../constants/images';
 
 const CategoryCard = props => {
     return (
         <View>
             <TouchableOpacity
-                style={styles.card}
+                style={{...styles.card,...props.style}}
             >
                 <Image
                     style={styles.image}
-                    source={require(`../../assets/app-images/seafood.png`)}
+                    source={AppImages.category[props.catItem.id]}
                 />
             </TouchableOpacity>
     <Text style={styles.title}>{props.catItem.name}</Text>

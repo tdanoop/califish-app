@@ -4,10 +4,7 @@ import { SliderBox } from "react-native-image-slider-box";
 
 
 const images = [
-    "../../assets/app-images/slider-image-1.jpg",
-    "../../assets/app-images/slider-image-1.jpg",
-    "../../assets/app-images/slider-image-1.jpg",
-    "../../assets/app-images/slider-image-1.jpg",
+    require('../../assets/app-images/slider-image-1.jpg'),
     require('../../assets/favicon.png'),
 ]
 const SliderImage = props => {
@@ -20,9 +17,9 @@ const SliderImage = props => {
                 dotColor="#FFEE58"
                 inactiveDotColor="#536f87"
                 images={images}
-                onCurrentImagePressed={index =>
-                    console.warn(`image ${index} pressed`)
-                }
+                // onCurrentImagePressed={index =>
+                //     console.warn(`image ${index} pressed`)
+                // }
             />
         </View>
     )

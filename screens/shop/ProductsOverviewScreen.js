@@ -60,8 +60,8 @@ const ProductOverviewScreen = ({ navigation }, props) => {
                 
                 </ScrollView>
             </View>
-            <View >
-                {/* <FlatList
+            {/* <View >
+                 <FlatList
                   
                     //key={demandList ? 1 : 0}
                     keyExtractor={(item, index) => item.id}
@@ -76,8 +76,8 @@ const ProductOverviewScreen = ({ navigation }, props) => {
                         //width: 1000,
                         //justifyContent: 'space-around'
                          }}
-                /> */}
-            </View>
+                /> 
+            </View> */}
 
 
 
