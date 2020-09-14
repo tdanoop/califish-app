@@ -5,6 +5,8 @@ import * as productAction from '../../store/actions/productsActions';
 import SliderImage from '../../components/UI/SliderImage';
 import CategoryCard from '../../components/UI/CategoryCard';
 import CardList from '../../components/UI/CardList';
+import TwoColImageList from '../../components/UI/TwoColImageList';
+import SuperSaverList from '../../components/UI/SuperSaverList';
 
 const ProductOverviewScreen = ({ navigation }, props) => {
     const products = useSelector(state => state.productsReducer.products);
@@ -60,33 +62,14 @@ const ProductOverviewScreen = ({ navigation }, props) => {
                 
                 </ScrollView>
             </View>
-            <ScrollView >
-                 <FlatList
-                  
-                    //key={demandList ? 1 : 0}
-                    keyExtractor={(item, index) => item.id}
-                    data={demandList}
-                    renderItem={(demandItem) => (
-                        <CardList demandItem={demandItem} />
-                    )}
-           
-                    style={{ margin:5 }}
-                    numColumns={2}
-                    contentContainerStyle={{ 
-                        //width: 1000,
-                        //justifyContent: 'space-around'
-                         }}
-                /> 
-            </ScrollView>
+            
+            <TwoColImageList />
 
+            <SuperSaverList />
 
 
         </ScrollView>
-        // <View style={styles.screen}>
-        //     <Text>Products Overview Screen + {products}</Text>
-        //     <Button title="Action" onPress={checkAction} />
-        //     <Button title="Details" onPress={() => navigation.navigate('Details', { name: 'Product List' })} />
-        // </View>
+
 
     );
 }
@@ -115,7 +98,7 @@ const styles = StyleSheet.create({
         flex: 1
     },
     title: {
-        fontSize:14,color:'#000a11', fontWeight:'bold', paddingLeft:5,  paddingTop:20,paddingBottom:10, backgroundColor: '#fff',
+        fontSize:14,color:'#000a11',  paddingLeft:5,  paddingTop:20,paddingBottom:10, backgroundColor: '#fff', fontFamily:'Montserrat_800ExtraBold'
     },
     screen: {
         flex: 1,

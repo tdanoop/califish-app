@@ -16,9 +16,9 @@ const CardList = props => {
                     <Text style={styles.kilogram}>1.00 Kg</Text>
 
                 </View>
-                <View style={{alignContent: 'stretch',flexDirection: 'row',marginTop:5}}>
+                <View style={{alignContent: 'flex-start',flexDirection: 'row',marginTop:5}}> 
                 <Text style={styles.price}>₹550</Text>
-                <Image source={require(`../../assets/app-images/plus.png`)} style={{ width:18,height:18 }} />
+                <Image style={styles.plusIcon} source={require(`../../assets/app-images/plus.png`)} />
                 </View>
 
             
@@ -29,7 +29,7 @@ const CardList = props => {
 }
 
 const styles = StyleSheet.create({
-    sliderWrap:{backgroundColor: '#fff', paddingLeft:5, paddingRight:5},
+    sliderWrap:{backgroundColor: '#fff', paddingLeft:5, paddingRight:5, paddingBottom:10},
     card: {
         alignItems: 'center',
         justifyContent: 'center',
@@ -41,18 +41,19 @@ const styles = StyleSheet.create({
     },
     title: {
         //borderWidth:2
-        marginTop:5, fontSize:12, textAlign:'left', color:'#0d539a',fontWeight:'bold'
+        marginTop:5, fontSize:12, textAlign:'left', color:'#0d539a',fontFamily:'Montserrat_800ExtraBold'
     },
     kilogram: {
         //borderWidth:2
-        marginTop:3, fontSize:12,color:'#000a11', textAlign:'left', fontWeight:'normal'
+        marginTop:3, fontSize:12,color:'#000a11', textAlign:'left', fontFamily:'Montserrat_300Light'
     },
     image: {
         width: '80%', height: '80%', resizeMode: 'contain'
     },price: {
         //borderWidth:2
-        marginTop:0, fontSize:13,color:'#000a11', textAlign:'left', fontWeight:'bold', width:'50%'
-    }
+        marginTop:0, fontSize:13,color:'#000a11', textAlign:'left', fontFamily:'Montserrat_800ExtraBold',
+    },
+    plusIcon:{ width:18,height:18,marginLeft:15}
 
 });
 
