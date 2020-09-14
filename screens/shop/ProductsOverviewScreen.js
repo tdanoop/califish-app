@@ -23,12 +23,12 @@ const ProductOverviewScreen = ({ navigation }, props) => {
     ]
 
     const demandList = [
-        { id: 1, name: 'SeaFood', image: '../../assets/app-images/seafood.png', backgroundColor: 'red' },
-        { id: 2, name: 'BackWater', image: '../../assets/app-images/backwater.png', backgroundColor: 'blue' },
-        { id: 3, name: 'Dried/Pickle', image: '../../assets/app-images/dried.png', backgroundColor: 'green' },
-        { id: 4, name: 'Fish Combo', image: '../../assets/app-images/combo.png', backgroundColor: 'yellow' },
-        { id: 5, name: 'SeaFood', image: '../../assets/app-images/seafood.png', backgroundColor: 'red' },
-        { id: 6, name: 'BackWater', image: '../../assets/app-images/backwater.png', backgroundColor: 'blue' },
+        { id: 1, name: 'SeaFood', image: '../../assets/app-images/seafood.png', background: '#003d63' },
+        { id: 2, name: 'BackWater', image: '../../assets/app-images/backwater.png', background: '#7a8151' },
+        { id: 3, name: 'Dried/Pickle', image: '../../assets/app-images/dried.png', background: '#c28551' },
+        { id: 4, name: 'Fish Combo', image: '../../assets/app-images/combo.png', background: '#428edb' },
+        { id: 5, name: 'SeaFood', image: '../../assets/app-images/seafood.png', background: '#003d63' },
+        { id: 6, name: 'BackWater', image: '../../assets/app-images/backwater.png', background: '#7a8151' },
     ]
 
     const checkAction = () => {
@@ -56,11 +56,11 @@ const ProductOverviewScreen = ({ navigation }, props) => {
                     decelerationRate="fast"
                     pagingEnabled
                 >
-                    {demandList.map((demandItem) => (<CardList key={demandItem.id} demandItem={demandItem} />))}
+                    {demandList.map((demandItem) => (<CardList key={demandItem.id} demandItem={demandItem}  style={{backgroundColor:demandItem.background}}/>))}
                 
                 </ScrollView>
             </View>
-            {/* <View >
+            <ScrollView >
                  <FlatList
                   
                     //key={demandList ? 1 : 0}
@@ -77,7 +77,7 @@ const ProductOverviewScreen = ({ navigation }, props) => {
                         //justifyContent: 'space-around'
                          }}
                 /> 
-            </View> */}
+            </ScrollView>
 
 
 

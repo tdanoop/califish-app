@@ -5,7 +5,7 @@ const CardList = props => {
     return (
         <View style={styles.sliderWrap}>
                 <View style={{}}>
-                    <TouchableOpacity style={styles.card}
+                    <TouchableOpacity style={{...styles.card,...props.style}}
                         
                     >
                         <Image style={styles.image}
@@ -15,8 +15,6 @@ const CardList = props => {
                     <Text style={styles.title}>{props.demandItem.name}</Text>
                     <Text style={styles.kilogram}>1.00 Kg</Text>
 
-                    
-                    
                 </View>
                 <View style={{alignContent: 'stretch',flexDirection: 'row',marginTop:5}}>
                 <Text style={styles.price}>₹550</Text>
