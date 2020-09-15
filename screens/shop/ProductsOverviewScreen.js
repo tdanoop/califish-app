@@ -49,7 +49,6 @@ const ProductOverviewScreen = ({ navigation }, props) => {
 
                 <ScrollView
                     contentContainerStyle={{
-                        //width: 1000,
                         justifyContent: 'space-around'
                     }}
                     horizontal={true}
