@@ -5,19 +5,19 @@ import AppImages from '../../constants/images';
 const TwoColImageList = props => {
 
     return (
-                <View style={{ width: '50%', paddingLeft: 5, paddingRight: 5, paddingBottom: 20 }}>
-                    <TouchableOpacity style={{...styles.imgWrap,...props.style}}>
-                        <Image style={styles.image}
-                            source={AppImages.fishes[props.demandItem.id]}
-                        />
-                    </TouchableOpacity>
-                    <Text style={styles.titleName}>Sword Fish/ Local Name</Text>
-                    <Text style={styles.kilogram}>1.00 Kg</Text>
-                    <View style={{ alignContent: 'flex-start', flexDirection: 'row', marginTop: 5 }}>
-                        <Text style={styles.price}>₹550</Text>
-                        <Image style={styles.plusIcon} source={require(`../../assets/app-images/plus.png`)} />
-                    </View>
-                </View>
+        <View>
+            <TouchableOpacity style={{ ...styles.imgWrap, ...props.style }}>
+                <Image style={styles.image}
+                    source={AppImages.fishes[props.demandItem.id]}
+                />
+            </TouchableOpacity>
+            <Text style={styles.titleName}>Sword Fish/ Local Name</Text>
+            <Text style={styles.kilogram}>1.00 Kg</Text>
+            <View style={{ alignContent: 'flex-start', flexDirection: 'row', marginTop: 5 }}>
+                <Text style={styles.price}>₹550</Text>
+                <Image style={styles.plusIcon} source={require(`../../assets/app-images/plus.png`)} />
+            </View>
+        </View>
 
     )
 }
