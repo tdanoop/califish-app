@@ -4,5 +4,16 @@ export default {
         '2':require(`../assets/app-images/backwater.png`),
         '3':require(`../assets/app-images/dried.png`),
         '4':require(`../assets/app-images/combo.png`),
+    },
+    fishes:{
+        '1':require(`../assets/app-images/cali-fish1.png`),
+        '2':require(`../assets/app-images/cali-fish2.png`),
+        '3':require(`../assets/app-images/cali-fish3.png`),
+        '4':require(`../assets/app-images/cali-fish4.png`),
+        '5':require(`../assets/app-images/cali-fish5.png`),
+        '6':require(`../assets/app-images/cali-fish6.png`),
+        '7':require(`../assets/app-images/cali-fish7.png`),
+        '8':require(`../assets/app-images/cali-fish8.png`),
+        '9':require(`../assets/app-images/cali-fish9.png`),
     }
 }

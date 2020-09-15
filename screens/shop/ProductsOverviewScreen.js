@@ -18,19 +18,19 @@ const ProductOverviewScreen = ({ navigation }, props) => {
     // }, [])
 
     const categoryList = [
-        { id: 1,name: 'SeaFood', image: '../../assets/app-images/seafood.png', background: '#428edb' },
-        { id: 2,name: 'BackWater', image: '../../assets/app-images/backwater.png', background: '#7a8151' },
-        { id: 3,name: 'Dried/Pickle', image: '../../assets/app-images/dried.png', background: '#c28551' },
-        { id: 4,name: 'Fish Combo', image: '../../assets/app-images/combo.png', background: '#003d63' }
+        { id: 1, name: 'SeaFood', image: '../../assets/app-images/seafood.png', background: '#428edb' },
+        { id: 2, name: 'BackWater', image: '../../assets/app-images/backwater.png', background: '#7a8151' },
+        { id: 3, name: 'Dried/Pickle', image: '../../assets/app-images/dried.png', background: '#c28551' },
+        { id: 4, name: 'Fish Combo', image: '../../assets/app-images/combo.png', background: '#003d63' }
     ]
 
     const demandList = [
-        { id: 1, name: 'SeaFood', image: '../../assets/app-images/seafood.png', background: '#003d63' },
-        { id: 2, name: 'BackWater', image: '../../assets/app-images/backwater.png', background: '#7a8151' },
-        { id: 3, name: 'Dried/Pickle', image: '../../assets/app-images/dried.png', background: '#c28551' },
-        { id: 4, name: 'Fish Combo', image: '../../assets/app-images/combo.png', background: '#428edb' },
-        { id: 5, name: 'SeaFood', image: '../../assets/app-images/seafood.png', background: '#003d63' },
-        { id: 6, name: 'BackWater', image: '../../assets/app-images/backwater.png', background: '#7a8151' },
+        { id: 1, name: 'SeaFood', image: '../../assets/app-images/seafood.png', background: '#e4e4e4' },
+        { id: 2, name: 'BackWater', image: '../../assets/app-images/backwater.png', background: '#fcecef' },
+        { id: 3, name: 'Dried/Pickle', image: '../../assets/app-images/dried.png', background: '#e3ecf3' },
+        { id: 4, name: 'Fish Combo', image: '../../assets/app-images/combo.png', background: '#e8ecdf' },
+        { id: 5, name: 'SeaFood', image: '../../assets/app-images/seafood.png', background: '#fcecef' },
+        { id: 6, name: 'BackWater', image: '../../assets/app-images/backwater.png', background: '#f6efe8' },
     ]
 
     const checkAction = () => {
@@ -41,7 +41,7 @@ const ProductOverviewScreen = ({ navigation }, props) => {
     return (
         <ScrollView showsHorizontalScrollIndicator={false} >
             <View style={styles.categoryWrapper} cssc>
-                {categoryList.map((catItem) => (<CategoryCard key={catItem.id} catItem={catItem} style={{backgroundColor:catItem.background}}/>))}
+                {categoryList.map((catItem) => (<CategoryCard key={catItem.id} catItem={catItem} style={{ backgroundColor: catItem.background }} />))}
             </View>
             <SliderImage />
             <View style={styles.demandWrapper}>
@@ -58,12 +58,26 @@ const ProductOverviewScreen = ({ navigation }, props) => {
                     decelerationRate="fast"
                     pagingEnabled
                 >
-                    {demandList.map((demandItem) => (<CardList key={demandItem.id} demandItem={demandItem}  style={{backgroundColor:demandItem.background}}/>))}
-                
+                    {demandList.map((demandItem) => (<CardList key={demandItem.id} demandItem={demandItem} style={{ backgroundColor: demandItem.background }} />))}
+
                 </ScrollView>
             </View>
-            
-            <TwoColImageList />
+
+
+            <View style={styles.fishListWrap}>
+                <Text style={styles.title1}>Fresh From Sea</Text>
+                <View style={{
+                    flexWrap: 'wrap',
+                    flexDirection: 'row',
+                }}>
+                    {demandList.map((demandItem) => (<TwoColImageList key={demandItem.id} demandItem={demandItem} style={{ backgroundColor: demandItem.background }} />))}
+                </View>
+                <View >
+                    <TouchableOpacity>
+                        <Text style={styles.button}>View More</Text>
+                    </TouchableOpacity>
+                </View>
+            </View>
 
             <SuperSaverList />
 
@@ -76,11 +90,19 @@ const ProductOverviewScreen = ({ navigation }, props) => {
 
 const styles = StyleSheet.create({
     categoryWrapper: {
-        paddingTop:30, paddingBottom:20, backgroundColor:'#fff',
+        paddingTop: 30, paddingBottom: 20, backgroundColor: '#fff',
         //borderWidth: 2,
         alignItems: "center",
         flexDirection: "row",
         justifyContent: 'space-around'
+    },
+    fishListWrap: {
+        backgroundColor: '#fff',
+        paddingLeft: 10,
+        paddingRight: 10
+    },
+    title1: {
+        fontSize: 14, color: '#000a11', paddingLeft: 5, paddingTop: 40, paddingBottom: 10, backgroundColor: '#fff', fontFamily: 'Montserrat_800ExtraBold'
     },
     demandWrapper: {
         //height: 140,
@@ -89,7 +111,7 @@ const styles = StyleSheet.create({
         //alignItems: "center",
         //flexDirection: "row",
         //justifyContent: 'space-around'
-        paddingLeft:10, paddingRight:10,backgroundColor: '#fff',
+        paddingLeft: 10, paddingRight: 10, backgroundColor: '#fff',
     },
     freshWrapper: {
         justifyContent: 'center',
@@ -98,15 +120,18 @@ const styles = StyleSheet.create({
         flex: 1
     },
     title: {
-        fontSize:14,color:'#000a11',  paddingLeft:5,  paddingTop:20,paddingBottom:10, backgroundColor: '#fff', fontFamily:'Montserrat_800ExtraBold'
+        fontSize: 14, color: '#000a11', paddingLeft: 5, paddingTop: 20, paddingBottom: 10, backgroundColor: '#fff', fontFamily: 'Montserrat_800ExtraBold'
+    },
+    button: {
+        padding: 10, backgroundColor: '#0d539a', fontSize: 13, color: '#ffffff', fontFamily: 'Montserrat_400Regular', textAlign: "center", borderRadius: 5, marginBottom: 20
     },
     screen: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
     },
-    tetet:{
-        backgroundColor:'green'
+    tetet: {
+        backgroundColor: 'green'
     }
 });
 

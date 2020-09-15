@@ -1,5 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, Image, View, Text, StyleSheet, ScrollView, Button } from 'react-native';
+import AppImages from '../../constants/images';
 
 const CardList = props => {
     return (
@@ -8,8 +9,9 @@ const CardList = props => {
                     <TouchableOpacity style={{...styles.card,...props.style}}
                         
                     >
-                        <Image style={styles.image}
-                            source={require('../../assets/app-images/backwater.png')}
+                        <Image 
+                            style={styles.image}
+                            source={AppImages.fishes[props.demandItem.id]}
                         />
                     </TouchableOpacity>
                     <Text style={styles.title}>{props.demandItem.name}</Text>
