@@ -58,8 +58,8 @@ const ProductOverviewScreen = ({ navigation }, props) => {
                     pagingEnabled
                 >
                     {demandList.map((demandItem) => (
-                        <View>
-                            <CardDisplay key={demandItem.id} demandItem={demandItem} style={{ backgroundColor: demandItem.background }} />
+                        <View key={demandItem.id}>
+                            <CardDisplay demandItem={demandItem} style={{ backgroundColor: demandItem.background }} />
                             <PriceDisplay />
                         </View>
                     ))}
@@ -73,9 +73,9 @@ const ProductOverviewScreen = ({ navigation }, props) => {
                     flexDirection: 'row',
                 }}>
                     {demandList.map((demandItem) => (
-                        <View style={{ width: '50%', paddingLeft: 5, paddingRight: 5, paddingBottom: 20 }}>
+                        <View  key={demandItem.id} style={{ width: '50%', paddingLeft: 5, paddingRight: 5, paddingBottom: 20 }}>
                             <CardDisplay
-                                key={demandItem.id}
+                                
                                 demandItem={demandItem}
                                 style={{ backgroundColor: demandItem.background, height: 110, width: '100%' }} />
                             <PriceDisplay />
@@ -90,7 +90,8 @@ const ProductOverviewScreen = ({ navigation }, props) => {
 
             <View style={styles.sectionWrapper} >
                 <Text style={{ ...styles.title, ...{ paddingTop: 40 } }}>Super Saver</Text>
-                {demandList.map((demandItem) => (<SuperSaverList key={demandItem.id} demandItem={demandItem} style={{ backgroundColor: demandItem.background }} />))}
+                {demandList.map((demandItem) => (
+                <SuperSaverList key={demandItem.id} demandItem={demandItem} style={{ backgroundColor: demandItem.background }} />))}
                 <View>
                     <TouchableOpacity>
                         <Text style={styles.button}>View More</Text>

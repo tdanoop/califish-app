@@ -19,8 +19,8 @@ const ProductListScreen = ({ route, navigation }, props) => {
             {/* <Text>itemId: {JSON.stringify(itemId)}</Text> */}
             <Text style={styles.title1}>Sea Food</Text>
             {demandList.map((demandItem) => (
-                <View style={{ justifyContent: 'space-between', flexDirection: 'row', marginBottom: 20 }}>
-                    <CardDisplay key={demandItem.id} demandItem={demandItem} style={{ backgroundColor: demandItem.background, height: 110 }} />
+                <View  key={demandItem.id} style={{ justifyContent: 'space-between', flexDirection: 'row', marginBottom: 20 }}>
+                    <CardDisplay  demandItem={demandItem} style={{ backgroundColor: demandItem.background, height: 110 }} />
                     <PriceDisplay/>
                 </View>
 ))}
