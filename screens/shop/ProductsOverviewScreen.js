@@ -40,7 +40,7 @@ const ProductOverviewScreen = ({ navigation }, props) => {
     //console.log('loader : ', loader);
     return (
         <ScrollView showsHorizontalScrollIndicator={false} >
-            <View style={styles.categoryWrapper} cssc>
+            <View style={styles.categoryWrapper}>
                 {categoryList.map((catItem) => (<CategoryCard key={catItem.id} catItem={catItem} style={{ backgroundColor: catItem.background }} />))}
             </View>
             <SliderImage />
@@ -79,9 +79,17 @@ const ProductOverviewScreen = ({ navigation }, props) => {
                 </View>
             </View>
 
-            <SuperSaverList />
-
-
+            <View style={styles.fishListWrap} >
+            <Text style={styles.title1}>Super Saver</Text>
+            {demandList.map((demandItem) => (<SuperSaverList key={demandItem.id} demandItem={demandItem} style={{ backgroundColor: demandItem.background }} />))}
+            <View>
+                <TouchableOpacity>
+                    <Text style={styles.button}>
+                        View More
+            </Text>
+                </TouchableOpacity>
+            </View>
+            </View>
         </ScrollView>
 
 
