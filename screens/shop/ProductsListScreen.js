@@ -1,9 +1,10 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet,Button } from 'react-native';
 import CardDisplay from '../../components/UI/CardDisplay';
-import PriceDisplay from '../../components/UI/PriceDisplay'
+import PriceDisplay from '../../components/UI/PriceDisplay';
+import { HeaderBackButton } from '@react-navigation/stack';
 
-const ProductListScreen = ({ route, navigation }, props) => {
+const ProductListScreen = ({ route, navigation:{ goBack } }, props) => {
     const { itemId } = route.params;
     const demandList = [
         { id: 1, name: 'SeaFood', image: '../../assets/app-images/seafood.png', background: '#e4e4e4' },
@@ -17,7 +18,12 @@ const ProductListScreen = ({ route, navigation }, props) => {
 
         <View style={styles.fishListWrap} >
             {/* <Text>itemId: {JSON.stringify(itemId)}</Text> */}
-            <Text style={styles.title1}>Sea Food</Text>
+            <Button
+         onPress={() => goBack()}
+        title="Info"
+        color="black"
+      />
+            <Text style={styles.title1} onPress={() => goBack()}>Sea Food</Text>
             {demandList.map((demandItem) => (
                 <View  key={demandItem.id} style={{ justifyContent: 'space-between', flexDirection: 'row', marginBottom: 20 }}>
                     <CardDisplay  demandItem={demandItem} style={{ backgroundColor: demandItem.background, height: 110 }} />
