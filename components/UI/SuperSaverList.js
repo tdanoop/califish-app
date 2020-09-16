@@ -62,10 +62,10 @@ const styles = StyleSheet.create({
     },
     plusIcon: { width: 18, height: 18, marginLeft: 15 },
     imgWrap: {
-        alignItems: 'center', justifyContent: 'center', width: 67, height: 67, borderRadius: 100, backgroundColor: '#e8ecdf', marginBottom: 0, borderWidth: 3, borderColor: '#ffffff', position: "absolute", top: 0, left: 0
+        alignItems: 'center', justifyContent: 'center', width: 75, height: 75, borderRadius: 100, backgroundColor: '#e8ecdf', marginBottom: 0, borderWidth: 3, borderColor: '#ffffff', position: "absolute", top: 0, left: 0
     },
     imgWrap2: {
-        alignItems: 'center', justifyContent: 'center', width: 67, height: 67, borderRadius: 100, backgroundColor: '#e8ecdf', marginBottom: 0, borderWidth: 3, borderColor: '#ffffff', position: "absolute", top: 0, left: 50
+        alignItems: 'center', justifyContent: 'center', width: 75, height: 75, borderRadius: 100, backgroundColor: '#e8ecdf', marginBottom: 0, borderWidth: 3, borderColor: '#ffffff', position: "absolute", top: 0, left: 55
     },
     image: { width: '80%', height: '80%', resizeMode: 'contain' },
 

@@ -14,7 +14,7 @@ const SliderImage = props => {
             <SliderBox
                circleLoop = {false}
                 sliderBoxHeight={180}
-                dotColor="#FFEE58"
+                dotColor="#ffffff"
                 inactiveDotColor="#536f87"
                 images={images}
                 // onCurrentImagePressed={index =>
