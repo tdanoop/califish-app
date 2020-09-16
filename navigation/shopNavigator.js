@@ -13,7 +13,7 @@ import MyProfileScreen from '../screens/user/MyProfileScreen';
 import ProductsOverviewScreen from '../screens/shop/ProductsOverviewScreen';
 import ProductListScreen from '../screens/shop/ProductsListScreen';
 import colors from '../constants/colors';
-import { Platform, Button, Image, View } from 'react-native';
+import { Platform, Button, Image, View,Text } from 'react-native';
 import HeaderButton from '../components/UI/HeaderButton';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons'
 
@@ -23,6 +23,29 @@ const MaterialBottomTabs = createMaterialBottomTabNavigator();
 
 
 const ShopNavigator = () => {
+
+    return (
+        <View style={{ justifyContent: 'space-between', flexDirection: 'row', marginBottom:0,paddingLeft:20,paddingRight:20,paddingTop:40,paddingBottom:20, borderBottomWidth:1,borderBottomColor:'#d8d8d8' }}>
+    
+            <View style={{ width: '70%',justifyContent: 'flex-start', flexDirection: 'row', alignItems:"flex-end" }}>
+            <View style={{ }}>
+                <Image style={{ width: 18, height: 12,marginTop:4 }}  source={require('../assets/app-images/handburger.png')}/></View>
+                <View style={{ }}>
+                <Image style={{ width: 83, height: 18,marginLeft:20 }}  source={require('../assets/app-images/logo.jpg')}/></View>
+            </View>
+    
+    
+            <View style={{ width: '30%',justifyContent: 'space-between', flexDirection: 'row', alignItems:"flex-end" }}>
+            <View style={{ }}><Image style={{ width: 15, height: 15 }}  source={require('../assets/app-images/search.png')}/></View>
+            <View style={{ }}><Image style={{ width: 13, height: 15 }}  source={require('../assets/app-images/locartion.png')}/></View>
+            <View style={{ }}>
+            <Text style={{position:'absolute',top:-14,right:0,backgroundColor:"#cdecfc",fontSize:8,color:'#0d539a',fontWeight:'bold',paddingLeft:5,paddingRight:5,paddingTop:1,paddingBottom:1,borderRadius:3}}>3</Text>
+                <Image style={{ width: 23, height: 14 }}  source={require('../assets/app-images/basket.png')}/>
+                </View>
+            </View>
+    
+        </View>
+        )
 
     // const createMaterialBottomTabs = () => {
     //     return (
