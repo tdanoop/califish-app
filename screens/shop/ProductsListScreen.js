@@ -6,7 +6,7 @@ import AppImages from '../../constants/images';
 import { HeaderBackButton } from '@react-navigation/stack';
 
 const ProductListScreen = ({ route, navigation: { goBack } }, props) => {
-    const { itemId } = route.params;
+    //const { itemId } = route.params;
     const demandList = [
         { id: 1, name: 'SeaFood', image: '../../assets/app-images/seafood.png', background: '#e4e4e4' },
         { id: 2, name: 'BackWater', image: '../../assets/app-images/backwater.png', background: '#fcecef' },
@@ -19,11 +19,11 @@ const ProductListScreen = ({ route, navigation: { goBack } }, props) => {
 
         <View style={styles.fishListWrap} >
             {/* <Text>itemId: {JSON.stringify(itemId)}</Text> */}
-            <Button
+            {/* <Button
                 onPress={() => goBack()}
                 title="Info"
                 color="black"
-            />
+            /> */}
             <Text style={styles.title1} onPress={() => goBack()}>Sea Food</Text>
             {demandList.map((demandItem) => (
                 <View key={demandItem.id} style={{ justifyContent: 'space-between', flexDirection: 'row', marginTop: 20 }}>

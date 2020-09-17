@@ -92,7 +92,7 @@ const ShopNavigator = () => {
         }
         return (
             <Stack.Navigator>
-                <Stack.Screen name='Product Overview' component={ProductsOverviewScreen}
+                <Stack.Screen name='Product Overview' component={ProductDetailScreen}
                     options={headerOptions}
                 />
                 <Stack.Screen name='List' component={ProductListScreen}
