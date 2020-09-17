@@ -107,7 +107,7 @@ const ShopNavigator = () => {
         <NavigationContainer>
             <Drawer.Navigator>
                 <Drawer.Screen name='Home' children={createHomeStack} />
-                <Drawer.Screen name='My Profile' component={MyProfileScreen} />
+                <Drawer.Screen name='My Profile' component={ProductDetailScreen} />
                 <Drawer.Screen name='Order' component={OrderScreen} />
                 <Drawer.Screen name='Address' component={AddressListScreen} />
                 <Drawer.Screen name='Contact Us' component={ContactUsScreen} />

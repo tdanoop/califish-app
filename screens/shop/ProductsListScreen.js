@@ -29,7 +29,7 @@ const ProductListScreen = ({ route, navigation: { goBack } }, props) => {
                 <View key={demandItem.id} style={{ justifyContent: 'space-between', flexDirection: 'row', marginTop: 20 }}>
 
                     <View style={styles.sliderWrap}>
-                        <TouchableOpacity style={styles.slcard}>
+                        <TouchableOpacity style={{...styles.slcard,...{backgroundColor:demandItem.background}}}>
                             <Image
                                 style={styles.slimage}
                                 //source={require(`../../assets/app-images/backwater.png`)}
