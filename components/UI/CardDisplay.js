@@ -2,11 +2,17 @@ import React from 'react';
 import { TouchableOpacity, Image, View, Text, StyleSheet, ScrollView, Button } from 'react-native';
 import AppImages from '../../constants/images';
 import PriceList from './PriceDisplay';
+import { useNavigation } from '@react-navigation/native';
 
 const CardDisplay = props => {
+    const navigation = useNavigation();
     return (
         <View style={styles.sliderWrap}>        
-                <TouchableOpacity style={{ ...styles.card, ...props.style }}>
+                <TouchableOpacity style={{ ...styles.card, ...props.style }}
+                onPress={() => navigation.navigate('Details', {
+                    name: 'Product Details',
+                    itemId: props.demandItem.id
+                })}>
                     <Image
                         style={styles.image}
                         source={AppImages.fishes[props.demandItem.id]}

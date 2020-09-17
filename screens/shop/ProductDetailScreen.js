@@ -1,9 +1,14 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet,Button } from 'react-native';
 
-const ProductDetailScreen = (props) => {
+const ProductDetailScreen = ({ navigation: { goBack } },props) => {
     return (
         <View style={styles.screen}>
+            <Button
+                onPress={() => goBack()}
+                title="Info"
+                color="black"
+            />
             <Text>Product Detail Screen</Text>
         </View>
     )

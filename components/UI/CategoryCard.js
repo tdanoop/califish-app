@@ -9,7 +9,7 @@ const CategoryCard = props => {
         <View>
             <TouchableOpacity
                 style={{ ...styles.card, ...props.style }}
-                onPress={() => navigation.navigate('Details', {
+                onPress={() => navigation.navigate('List', {
                     name: 'Product List',
                     itemId: props.catItem.id
                 })}

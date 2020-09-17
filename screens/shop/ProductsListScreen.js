@@ -5,7 +5,7 @@ import PriceDisplay from '../../components/UI/PriceDisplay';
 import AppImages from '../../constants/images';
 import { HeaderBackButton } from '@react-navigation/stack';
 
-const ProductListScreen = ({ route, navigation:{ goBack } }, props) => {
+const ProductListScreen = ({ route, navigation: { goBack } }, props) => {
     const { itemId } = route.params;
     const demandList = [
         { id: 1, name: 'SeaFood', image: '../../assets/app-images/seafood.png', background: '#e4e4e4' },
@@ -20,46 +20,46 @@ const ProductListScreen = ({ route, navigation:{ goBack } }, props) => {
         <View style={styles.fishListWrap} >
             {/* <Text>itemId: {JSON.stringify(itemId)}</Text> */}
             <Button
-         onPress={() => goBack()}
-        title="Info"
-        color="black"
-      />
+                onPress={() => goBack()}
+                title="Info"
+                color="black"
+            />
             <Text style={styles.title1} onPress={() => goBack()}>Sea Food</Text>
             {demandList.map((demandItem) => (
-                <View  key={demandItem.id} style={{ justifyContent: 'space-between', flexDirection: 'row', marginTop:20 }}>
-                    
-                    <View style={styles.sliderWrap}>        
-                <TouchableOpacity style={{ ...styles.slcard, ...props.style }}>
-                    <Image
-                        style={styles.slimage}
-                        source={require(`../../assets/app-images/backwater.png`)}
-                        // source={AppImages.fishes[props.demandItem.id]}
-                    />
-                </TouchableOpacity>      
-        </View>
+                <View key={demandItem.id} style={{ justifyContent: 'space-between', flexDirection: 'row', marginTop: 20 }}>
+
+                    <View style={styles.sliderWrap}>
+                        <TouchableOpacity style={styles.slcard}>
+                            <Image
+                                style={styles.slimage}
+                                //source={require(`../../assets/app-images/backwater.png`)}
+                                source={AppImages.fishes[demandItem.id]}
+                            />
+                        </TouchableOpacity>
+                    </View>
 
 
-                   <View style={styles.contentWrap}>
-            <Text style={styles.cotitle}>Test Name</Text>
-            
-            <View style={{ alignContent: 'flex-start', flexDirection: 'row', marginTop: 5 }}>
+                    <View style={styles.contentWrap}>
+                        <Text style={styles.cotitle}>Test Name</Text>
 
-            <View style={{width:'50%', alignContent: 'flex-start', flexDirection: 'row' }}>
-            <Image style={styles.coplusIcon} source={require(`../../assets/app-images/negative.png`)} />
-                <Text style={styles.cokilogram}>1.00 Kg</Text>
-            </View>
-            <View style={{width:'50%', alignContent: 'flex-start', flexDirection: 'row' }}>
-            <Image style={styles.coplusIcon} source={require(`../../assets/app-images/plus.png`)} />
-            <Text style={styles.coprice}>₹550</Text>
-            </View>
+                        <View style={{ alignContent: 'flex-start', flexDirection: 'row', marginTop: 5 }}>
+
+                            <View style={{ width: '50%', alignContent: 'flex-start', flexDirection: 'row' }}>
+                                <Image style={styles.coplusIcon} source={require(`../../assets/app-images/negative.png`)} />
+                                <Text style={styles.cokilogram}>1.00 Kg</Text>
+                            </View>
+                            <View style={{ width: '50%', aligtent: 'flexnCon-start', flexDirection: 'row' }}>
+                                <Image style={styles.coplusIcon} source={require(`../../assets/app-images/plus.png`)} />
+                                <Text style={styles.coprice}>₹550</Text>
+                            </View>
 
 
-            </View>
-        </View>
+                        </View>
+                    </View>
 
 
                 </View>
-))}
+            ))}
         </View>
 
     )
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
         fontSize: 14, color: '#000a11', paddingLeft: 0, paddingTop: 10, paddingBottom: 0, backgroundColor: '#fff', fontFamily: 'Montserrat_800ExtraBold'
     },
 
-    contentWrap: { backgroundColor: '#fff', paddingLeft: 0, paddingRight: 0, paddingBottom: 0, width:'60%' },
+    contentWrap: { backgroundColor: '#fff', paddingLeft: 0, paddingRight: 0, paddingBottom: 0, width: '60%' },
     cotitle: {
         marginTop: 5,
         fontSize: 12,
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
         marginRight: 10
     },
 
-    sliderWrap: { backgroundColor: '#fff', paddingLeft: 0, paddingRight: 0, paddingBottom: 0, width:'40%' },
+    sliderWrap: { backgroundColor: '#fff', paddingLeft: 0, paddingRight: 0, paddingBottom: 0, width: '40%' },
     slcard: {
         alignItems: 'center',
         justifyContent: 'center',
@@ -114,8 +114,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'red',
     },
     slimage: {
-        width: '80%', 
-        height: '80%', 
+        width: '80%',
+        height: '80%',
         resizeMode: 'contain'
     }
 });

@@ -12,6 +12,7 @@ import MyProfileScreen from '../screens/user/MyProfileScreen';
 
 import ProductsOverviewScreen from '../screens/shop/ProductsOverviewScreen';
 import ProductListScreen from '../screens/shop/ProductsListScreen';
+import ProductDetailScreen from '../screens/shop/ProductDetailScreen';
 import colors from '../constants/colors';
 import { Platform, Button, Image, View, Text } from 'react-native';
 import HeaderButton from '../components/UI/HeaderButton';
@@ -67,13 +68,13 @@ const ShopNavigator = () => {
 
         const headerOptions = {
             //  headerTitle: props => <LogoTitle {...props} />,
-            headerTitle:'test',
+            headerTitle:'',
             headerLeft: () => (
                 <HeaderButtons HeaderButtonComponent={HeaderButton}>
                     <Item title='Menu'
                         iconName={Platform.OS === 'android' ? 'md-menu' : 'ios-menu'}
                         onPress={() => { navigation.toggleDrawer() }} />
-                    <View style={{width: 83, height: 18, marginLeft: 3 ,marginTop:4}}>
+                    <View style={{width: 63, height: 18, marginLeft: 3 ,marginTop:4}}>
                         <Image style={{ }} source={require('../assets/app-images/logo.jpg')} />
                     </View>
                 </HeaderButtons>
@@ -94,7 +95,9 @@ const ShopNavigator = () => {
                 <Stack.Screen name='Product Overview' component={ProductsOverviewScreen}
                     options={headerOptions}
                 />
-                <Stack.Screen name='Details' component={ProductListScreen}
+                <Stack.Screen name='List' component={ProductListScreen}
+                options={headerOptions} />
+                <Stack.Screen name='Details' component={ProductDetailScreen}
                 options={headerOptions} />
             </Stack.Navigator>
         )
