@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet,Button,Image,RadioButton,TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet,Button,Image,RadioButton,TouchableOpacity, ScrollView } from 'react-native';
 
 const ProductDetailScreen = ({ navigation: { goBack } },props) => {
     return (
@@ -11,12 +11,12 @@ const ProductDetailScreen = ({ navigation: { goBack } },props) => {
             />
             <Text>Product Detail Screen</Text>
         </View>*/
-
-        <View style={{backgroundColor:'#fff'}}>
+<ScrollView showsHorizontalScrollIndicator={false} style={{flex: 1,backgroundColor:'#fff'}} >
+        <View style={{backgroundColor:'#fff',}}>
              <Image style={{height:200,width:'100%'}} source={require(`../../assets/app-images/fish.jpg`)} />
 
 <View style={{ alignContent: 'flex-start', flexDirection: 'row', marginTop: 25,marginBottom: 15, paddingLeft:15, paddingRight:15}} >
-<View><Text style={{fontSize:18,color:'#000a11',fontFamily:'Montserrat_700Bold'}}>Chempalli / Red Snapper</Text></View>
+<View style={{maxwidth:'80%'}}><Text style={{fontSize:18,color:'#000a11',fontFamily:'Montserrat_700Bold'}}>Chempalli / Red Snapper ചാള ചാള ചാള </Text></View>
 <View><Text style={{fontSize:11,color:'#3a73ad',fontFamily:'Montserrat_400Regular', backgroundColor:'#cdecfc', paddingBottom:5, paddingTop:5, paddingLeft:10, paddingRight:10,marginLeft:10,borderRadius:3}}>info</Text></View>
 </View>
 
@@ -27,9 +27,9 @@ const ProductDetailScreen = ({ navigation: { goBack } },props) => {
 
 <View style={{ alignContent: 'flex-start', flexDirection: 'row', backgroundColor:'#eaf5fb',paddingLeft:15, paddingRight:15, paddingTop:10, paddingBottom:10, borderBottomColor:"#c9d7df", borderBottomWidth:1 }} >
 <View style={{width:'80%',alignContent: 'flex-start', flexDirection: 'row',}}>
-<Image style={{width: 19, height: 19, marginRight:10}} source={require(`../../assets/app-images/negative.png`)} />
+<Image style={{width: 18, height: 18, marginRight:10}} source={require(`../../assets/app-images/negative.png`)} />
 <Text style={{fontSize:14,color:'#000a11',fontFamily:'Montserrat_600SemiBold',marginRight:10}}>1.5 kg</Text>
-<Image style={{width: 19, height: 19, marginRight:0}} source={require(`../../assets/app-images/plus.png`)} /></View>
+<Image style={{width: 18, height: 18, marginRight:0}} source={require(`../../assets/app-images/plus.png`)} /></View>
 <View style={{width:'20%'}}><Text style={{fontSize:15,color:'#000a11',fontFamily:'Montserrat_700Bold',marginRight:0}}>₹825</Text></View>
 </View>
 
@@ -61,8 +61,8 @@ const ProductDetailScreen = ({ navigation: { goBack } },props) => {
 </View>
 
 <View style={{ paddingLeft:15, paddingRight:15, paddingTop:10, paddingBottom:20, marginBottom:10, borderBottomWidth:1, borderBottomColor:'#c9d7df' }} >
-<Text style = {{padding: 13, backgroundColor: '#0d539a', fontSize: 13, color: '#ffffff', fontFamily: 'Montserrat_600SemiBold', textAlign: "center", borderRadius: 5, marginBottom: 10}}> Order Now </Text>
-<Text style = {{padding: 13, backgroundColor: '#cdecfc', fontSize: 13, color: '#0d539a', fontFamily: 'Montserrat_600SemiBold', textAlign: "center", borderRadius: 5, marginBottom: 0}}> Add to Cart </Text>
+<TouchableOpacity><Text style = {{padding: 13, backgroundColor: '#0d539a', fontSize: 13, color: '#ffffff', fontFamily: 'Montserrat_600SemiBold', textAlign: "center", borderRadius: 5, marginBottom: 10}}> Order Now </Text></TouchableOpacity>
+<TouchableOpacity><Text style = {{padding: 13, backgroundColor: '#cdecfc', fontSize: 13, color: '#0d539a', fontFamily: 'Montserrat_600SemiBold', textAlign: "center", borderRadius: 5, marginBottom: 0}}> Add to Cart </Text></TouchableOpacity>
 </View>
    
 
@@ -151,6 +151,7 @@ const ProductDetailScreen = ({ navigation: { goBack } },props) => {
 </View>
 
 </View> 
+</ScrollView>
     )
 }
 
@@ -163,7 +164,7 @@ const styles = StyleSheet.create({
     contentWrap: { backgroundColor: '#fff', paddingLeft: 0, paddingRight: 0, paddingBottom: 0, width: '60%' },
     cotitle: {
         marginTop: 5,
-        fontSize: 12,
+        fontSize: 14,
         textAlign: 'left',
         color: '#0d539a',
         fontFamily: 'Montserrat_800ExtraBold'

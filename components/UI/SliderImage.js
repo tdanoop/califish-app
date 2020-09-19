@@ -17,6 +17,14 @@ const SliderImage = props => {
                 dotColor="#ffffff"
                 inactiveDotColor="#536f87"
                 images={images}
+                dotStyle={{
+                    width: 6,
+                    height: 6,
+                    borderRadius: 3,
+                    marginHorizontal:0,
+                    padding: 0,
+                    margin: 0,
+                  }}
                 // onCurrentImagePressed={index =>
                 //     console.warn(`image ${index} pressed`)
                 // }

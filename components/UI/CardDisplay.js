@@ -23,7 +23,7 @@ const CardDisplay = props => {
 }
 
 const styles = StyleSheet.create({
-    sliderWrap: { backgroundColor: '#fff', paddingLeft: 5, paddingRight: 5, paddingBottom: 10 },
+    sliderWrap: { backgroundColor: '#fff', paddingLeft: 0, paddingRight: 0, paddingBottom: 10 },
     card: {
         alignItems: 'center',
         justifyContent: 'center',

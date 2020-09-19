@@ -16,15 +16,25 @@ const ProductListScreen = ({ route, navigation: { goBack } }, props) => {
         { id: 6, name: 'BackWater', image: '../../assets/app-images/backwater.png', background: '#f6efe8' },
     ]
     return (
-
+<ScrollView showsHorizontalScrollIndicator={false} style={{flex: 1,backgroundColor:'#fff'}} >
         <View style={styles.fishListWrap} >
+
+<View style={{ alignContent: 'flex-start', flexDirection: 'row', marginTop:0 }}>
+<View> 
+    <TouchableOpacity onPress={() => goBack()}><Image style={{width:13,height:13,marginTop:13, marginRight:10}} source={require(`../../assets/app-images/back.png`)} /></TouchableOpacity>
+    </View>
+<View> 
+    <Text style={styles.title1} onPress={() => goBack()}>Sea Food</Text>
+    </View>
+</View>
+
             {/* <Text>itemId: {JSON.stringify(itemId)}</Text> */}
             {/* <Button
                 onPress={() => goBack()}
                 title="Info"
                 color="black"
             /> */}
-            <Text style={styles.title1} onPress={() => goBack()}>Sea Food</Text>
+           
             {demandList.map((demandItem) => (
                 <View key={demandItem.id} style={{ justifyContent: 'space-between', flexDirection: 'row', marginTop: 20 }}>
 
@@ -61,7 +71,7 @@ const ProductListScreen = ({ route, navigation: { goBack } }, props) => {
                 </View>
             ))}
         </View>
-
+</ScrollView>
     )
 }
 
@@ -69,7 +79,7 @@ const styles = StyleSheet.create({
     fishListWrap: {
         backgroundColor: '#fff',
         paddingLeft: 15,
-        paddingRight: 15
+        paddingRight: 15, paddingBottom:20
     },
     title1: {
         fontSize: 14, color: '#000a11', paddingLeft: 0, paddingTop: 10, paddingBottom: 0, backgroundColor: '#fff', fontFamily: 'Montserrat_800ExtraBold'
@@ -78,7 +88,7 @@ const styles = StyleSheet.create({
     contentWrap: { backgroundColor: '#fff', paddingLeft: 0, paddingRight: 0, paddingBottom: 0, width: '60%' },
     cotitle: {
         marginTop: 5,
-        fontSize: 12,
+        fontSize: 14,
         textAlign: 'left',
         color: '#0d539a',
         fontFamily: 'Montserrat_800ExtraBold'

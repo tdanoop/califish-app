@@ -13,6 +13,8 @@ import MyProfileScreen from '../screens/user/MyProfileScreen';
 import ProductsOverviewScreen from '../screens/shop/ProductsOverviewScreen';
 import ProductListScreen from '../screens/shop/ProductsListScreen';
 import ProductDetailScreen from '../screens/shop/ProductDetailScreen';
+import MyBasket from '../screens/shop/MyBasket';
+import LoginScreen from '../screens/shop/LoginScreen';
 import colors from '../constants/colors';
 import { Platform, Button, Image, View, Text } from 'react-native';
 import HeaderButton from '../components/UI/HeaderButton';
@@ -92,7 +94,7 @@ const ShopNavigator = () => {
         }
         return (
             <Stack.Navigator>
-                <Stack.Screen name='Product Overview' component={ProductDetailScreen}
+                <Stack.Screen name='Product Overview' component={LoginScreen}
                     options={headerOptions}
                 />
                 <Stack.Screen name='List' component={ProductListScreen}

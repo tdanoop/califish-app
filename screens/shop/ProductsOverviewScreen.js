@@ -40,11 +40,17 @@ const ProductOverviewScreen = ({ navigation }, props) => {
     }
     //console.log('loader : ', loader);
     return (
-        <ScrollView showsHorizontalScrollIndicator={false} >
+        <ScrollView showsHorizontalScrollIndicator={false} style={{flex: 1,backgroundColor:'#fff'}} >
             <View style={styles.categoryWrapper}>
                 {categoryList.map((catItem) => (<CategoryCard key={catItem.id} catItem={catItem} style={{ backgroundColor: catItem.background }} />))}
             </View>
             <SliderImage />
+
+<View style={{paddingTop:20, paddingRight:15, paddingLeft:15, paddingBottom:20, backgroundColor:'#fff'}}>
+    <View  style={{borderWidth:1,borderColor:'#d84a48', backgroundColor:"#f7dbda", padding:10, }}>
+    <Text style={{fontSize: 14,fontFamily: 'Montserrat_400Regular',color:'#d64b46'}}>We are sorry. No service available to the provided pincode. Change pincode from <Text style={{ fontSize: 14,fontFamily: 'Montserrat_400Regular',color:'#d64b46', textDecorationLine: "underline", textDecorationStyle: "solid", textDecorationColor: "#d64b46"}} onpress={() => Linking.openURL('#')}>My Account</Text></Text>
+</View></View>
+
             <View style={styles.sectionWrapper}>
                 <Text style={styles.title}>Fish on Demand</Text>
                 <ScrollView
@@ -58,7 +64,7 @@ const ProductOverviewScreen = ({ navigation }, props) => {
                     pagingEnabled
                 >
                     {demandList.map((demandItem) => (
-                        <View key={demandItem.id}>
+                        <View style={{marginRight:10}} key={demandItem.id}>
                             <CardDisplay demandItem={demandItem} style={{ backgroundColor: demandItem.background }} />
                             <PriceDisplay />
                         </View>
