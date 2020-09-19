@@ -74,8 +74,8 @@ const ShopNavigator = () => {
                     <Item title='Menu'
                         iconName={Platform.OS === 'android' ? 'md-menu' : 'ios-menu'}
                         onPress={() => { navigation.toggleDrawer() }} />
-                    <View style={{width: 63, height: 18, marginLeft: 3 ,marginTop:4}}>
-                        <Image style={{ }} source={require('../assets/app-images/logo.jpg')} />
+                    <View style={{width: 84, height: 18, marginLeft: 3 ,marginTop:4}}>
+                        <Image style={{width: 84, height: 18 }} source={require('../assets/app-images/logo.jpg')} />
                     </View>
                 </HeaderButtons>
             ),
